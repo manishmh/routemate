@@ -1,6 +1,6 @@
 import { Text, View } from '../../components/Themed';
 
-export default function TabTwoScreen() {
+export default function Search() {
   return (
     <View>
       <Text>Search</Text>

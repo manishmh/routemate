@@ -1,15 +1,8 @@
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Chat from "@/assets/tab-icons/Chat";
+import Colors from "@/constants/Colors";
+import { Ionicons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
 import { useColorScheme } from "react-native";
-
-import Colors from "../../constants/Colors";
-import Chat from "../../assets/tab-icons/Chat";
-import Serach from "../../assets/tab-icons/Serach";
-import Location from "../../assets/tab-icons/Location";
-import Groups from "../../assets/tab-icons/Groups";
-/**
- * You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
- */
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -19,23 +12,24 @@ export default function TabLayout() {
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: false,
+        tabBarLabelStyle: {
+          fontFamily: "mon-sb",
+        },
       }}
     >
       <Tabs.Screen
-        name="chat"
+        name="index"
         options={{
           title: "",
-          tabBarIcon: ({ color }) => (
-            <Chat color={ color }/> 
-          ),
+          tabBarIcon: ({ color }) => <Chat color={color} />,
         }}
       />
       <Tabs.Screen
         name="search"
         options={{
           title: "",
-          tabBarIcon: ({ color }) => (
-            <Serach color={ color }/>
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="search" color={color} size={20} />
           ),
         }}
       />
@@ -44,7 +38,7 @@ export default function TabLayout() {
         options={{
           title: "",
           tabBarIcon: ({ color }) => (
-            <Location color={ color }/>
+            <Ionicons name="location" color={color} size={20} />
           ),
         }}
       />
@@ -53,7 +47,7 @@ export default function TabLayout() {
         options={{
           title: "",
           tabBarIcon: ({ color }) => (
-            <Groups color={ color }/>
+            <Ionicons name="people" color={color} size={20} />
           ),
         }}
       />
