@@ -1,17 +1,19 @@
 import { Link } from "expo-router";
 import { Text, View } from "../../components/Themed";
-
+import { Navbar } from "@/components/Navbar";
+import { Groups } from "@/components/Groups";
+import ChatInterface from "@/components/Chat";
 export default function Index() {
   return (
     <View>
       <Link href={"/(modals)/login"}>
-        <Text>login</Text>
+        <Navbar />
       </Link>
       <Link href={"/(modals)/searching"}>
-        <Text>searching</Text>
+        <Groups />
       </Link>
       <Link href={"/listing/233"}>
-        <Text>listing</Text>
+        <ChatInterface />
       </Link>
     </View>
   );
